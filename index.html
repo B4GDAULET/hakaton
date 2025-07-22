@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoJo's Bizarre Adventure - Невероятные приключения ДжоДжо</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Обновляем стили для карточек */
+        .part {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .part > a {
+            text-decoration: none;
+            color: inherit;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .part:hover {
+            transform: translateY(-5px);
+        }
+
+        .part p {
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Audio Player -->
+    <div class="audio-player">
+        <audio id="bgMusic" loop>
+            <source src="music/ecoute-cherie.mp3" type="audio/mp3">
+            Ваш браузер не поддерживает аудио элемент.
+        </audio>
+        <div class="music-controls">
+            <button id="musicOn" class="music-control-btn">ON</button>
+            <button id="musicToggle" class="music-toggle">
+                <span class="music-icon">🎵</span>
+            </button>
+            <button id="musicOff" class="music-control-btn">OFF</button>
+        </div>
+    </div>
+    <!-- Навигационное меню -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">JJBA</div>
+            <button class="burger-menu" id="burgerMenu">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#characters">Персонажи</a></li>
+                    <li><a href="#plot">Сюжет</a></li>
+                    <li><a href="#stands">Станды</a></li>
+                    <li><a href="#villains">Злодеи</a></li>
+                    <li><a href="#moments">Моменты</a></li>
+                    <li><a href="#fandom">Фандом</a></li>
+                    <li><a href="#araki">Араки</a></li>
+                    <li><a href="#powers">Силы</a></li>
+                    <li><a href="#game">Игра</a></li>
+                    <li><a href="#timeline">Хронология</a></li>
+                    <li><a href="#quiz">Тест</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Главная секция -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1 class="menacing">ジョジョの奇妙な冒険</h1>
+            <p>Погрузитесь в удивительный мир JoJo's Bizarre Adventure!</p>
+        </div>
+    </section>
+
+    <!-- Секция о персонажах -->
+    <section id="characters" class="characters-section">
+        <h2 class="menacing">Главные герои</h2>
+        <div class="character-cards">
+            <div class="character-card">
+                <img src="images/jonathan joestar.jpg" alt="Джонатан Джостар" class="character-image">
+                <h3>Джонатан Джостар</h3>
+                <p>Первый ДжоДжо, джентльмен и благородный герой первой части.</p>
+                <div class="stand-info">
+                    <span class="stand-name">Сила: Хамон</span>
+                </div>
+            </div>
+            <div class="character-card">
+                <img src="images/joseph.jpg" alt="Джозеф Джостар" class="character-image">
+                <h3>Джозеф Джостар</h3>
+                <p>Внук Джонатана, харизматичный трикстер и главный герой второй части. Он обманет тебя в любой ситуации</p>
+                <div class="stand-info">
+                    <span class="stand-name">Сила: Хамон / Hermit Purple</span>
+                </div>
+            </div>
+            <div class="character-card">
+                <img src="images/jotaro.jpg" alt="Джотаро Куджо" class="character-image">
+                <h3>Джотаро Куджо</h3>
+                <p>Внук Джозефа, суровый протагонист третьей части. Лучше не трогать его маму</p>
+                <div class="stand-info">
+                    <span class="stand-name">Стенд: Star Platinum</span>
+                </div>
+            </div>
+            <div class="character-card">
+                <img src="images/josuke.jpg" alt="Джоске Хигашиката" class="character-image">
+                <h3>Джоске Хигашиката</h3>
+                <p>Главный герой четвертой части, защитник Морио. Лучше не говорить про его прическу</p>
+                <div class="stand-info">
+                    <span class="stand-name">Стенд: Crazy Diamond</span>
+                </div>
+            </div>
+            <div class="character-card">
+                <img src="images/giorno.jpg" alt="Джорно Джованна" class="character-image">
+                <h3>Джорно Джованна</h3>
+                <p>Сын ДИО и главный герой пятой части. Лучше купи ему Джелато</p>
+                <div class="stand-info">
+                    <span class="stand-name">Стенд: Gold Experience</span>
+                </div>
+            </div>
+            <div class="character-card">
+                <img src="images/jolyne.jpeg" alt="Джолин Куджо" class="character-image">
+                <h3>Джолин Куджо</h3>
+                <p>Дочь Джотаро и главная героиня шестой части.</p>
+                <div class="stand-info">
+                    <span class="stand-name">Стенд: Stone Free</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция о сюжете -->
+    <section id="plot" class="plot-section">
+        <h2 class="menacing">Сюжет</h2>
+        <div class="plot-content">
+            <div class="part">
+                <a href="parts/phantom-blood.html">
+                    <img src="images/jonathan joestar.jpg" alt="Phantom Blood" class="part-image">
+                    <h3>Phantom Blood</h3>
+                    <p>История начинается в викторианской Англии с противостояния Джонатана Джостара и Дио Брандо.</p>
+                </a>
+            </div>
+            <div class="part">
+                <a href="parts/battle-tendency.html">
+                    <img src="images/battle tendency.jpg" alt="Battle Tendency" class="part-image">
+                    <h3>Battle Tendency</h3>
+                    <p>Джозеф Джостар сражается с древними существами - Столпами, используя силу Хамона.</p>
+                </a>
+            </div>
+            <div class="part">
+                <a href="parts/stardust-crusaders.html">
+                    <img src="images/stardust crusaders.jpg" alt="Stardust Crusaders" class="part-image">
+                    <h3>Stardust Crusaders</h3>
+                    <p>Джотаро отправляется в путешествие по миру, чтобы спасти свою мать и победить ДИО.</p>
+                </a>
+            </div>
+            <div class="part">
+                <a href="parts/diamond-is-unbreakable.html">
+                    <img src="images/diamond is unbreakable.jpg" alt="Diamond is Unbreakable" class="part-image">
+                    <h3>Diamond is Unbreakable</h3>
+                    <p>Джоске защищает город Морио от злодеев со стендами и раскрывает тайну серийного убийцы.</p>
+                </a>
+            </div>
+            <div class="part">
+                <a href="parts/golden-wind.html">
+                    <img src="images/golden wind.jpg" alt="Golden Wind" class="part-image">
+                    <h3>Golden Wind</h3>
+                    <p>Джорно вступает в банду Passione, чтобы стать боссом мафии и очистить улицы от наркотиков.</p>
+                </a>
+            </div>
+            <div class="part">
+                <a href="parts/stone-ocean.html">
+                    <img src="images/stone ocean.jpg" alt="Stone Ocean" class="part-image">
+                    <h3>Stone Ocean</h3>
+                    <p>Джолин должна спасти своего отца Джотаро и противостоять последователю ДИО в тюрьме.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция стендов -->
+    <section id="stands" class="stands-section">
+        <h2 class="menacing">Эволюция стендов</h2>
+        <div class="stands-container">
+            <!-- Star Platinum -->
+            <div class="stand-evolution-card">
+                <div class="stand-base">
+                    <div class="stand-image-container">
+                        <img src="images/mtar platinum.jpg  " alt="Star Platinum" class="stand-image">
+                        <div class="stand-name">
+                            <h3>Star Platinum</h3>
+                            <span class="stand-cry">ORA ORA ORA ORA!</span>
+                        </div>
+                    </div>
+                    <div class="stand-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Сила</span>
+                            <span class="stat-value">A</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Скорость</span>
+                            <span class="stat-value">A</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Точность</span>
+                            <span class="stat-value">A</span>
+                        </div>
+                    </div>
+                    <div class="stand-abilities">
+                        <h4>Базовые способности</h4>
+                        <ul>
+                            <li>Сверхчеловеческая сила и скорость</li>
+                            <li>Точность до миллиметра</li>
+                            <li>Скорость ударов быстрее звука (300+ ударов/сек)</li>
+                            <li>Увеличенное зрение (может увидеть муху на расстоянии 4км)</li>
+                            <li>Способность втягивать предметы через легкие</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="evolution-arrow">
+                    <span class="arrow-text">ЭВОЛЮЦИЯ</span>
+                    <div class="arrow">↓</div>
+                </div>
+                <div class="stand-evolved">
+                    <div class="stand-image-container">
+                        <img src="images/starplatinum-theworld.jpg" alt="Star Platinum: The World" class="stand-image">
+                        <div class="stand-name">
+                            <h3>Star Platinum: The World</h3>
+                            <span class="stand-cry">STAR PLATINUM: ZA WARUDO!</span>
+                        </div>
+                    </div>
+                    <div class="stand-abilities evolved">
+                        <h4>Усиленные способности</h4>
+                        <ul>
+                            <li>Остановка времени на 5 секунд</li>
+                            <li>Способность двигаться в остановленном времени</li>
+                            <li>Сохранение всех базовых способностей</li>
+                            <li>Возможность увеличения времени остановки при тренировке</li>
+                            <li>Иммунитет к другим способностям остановки времени</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gold Experience -->
+            <div class="stand-evolution-card">
+                <div class="stand-base">
+                    <div class="stand-image-container">
+                        <img src="images/goldexperience.jpg" alt="Gold Experience" class="stand-image">
+                        <div class="stand-name">
+                            <h3>Gold Experience</h3>
+                            <span class="stand-cry">MUDA MUDA MUDA MUDA!</span>
+                        </div>
+                    </div>
+                    <div class="stand-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Сила</span>
+                            <span class="stat-value">C</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Скорость</span>
+                            <span class="stat-value">A</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Потенциал</span>
+                            <span class="stat-value">A</span>
+                        </div>
+                    </div>
+                    <div class="stand-abilities">
+                        <h4>Базовые способности</h4>
+                        <ul>
+                            <li>Создание жизни из неживых объектов</li>
+                            <li>Отражение физического и энергетического урона</li>
+                            <li>Ускорение восприятия жертвы до перегрузки разума</li>
+                            <li>Наполнение объектов жизненной энергией</li>
+                            <li>Исцеление ран путем создания новых органов</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="evolution-arrow">
+                    <span class="arrow-text">РЕКВИЕМ</span>
+                    <div class="arrow">↓</div>
+                </div>
+                <div class="stand-evolved requiem">
+                    <div class="stand-image-container">
+                        <img src="images/requiem.jpg" alt="Gold Experience Requiem" class="stand-image">
+                        <div class="stand-name">
+                            <h3>Gold Experience Requiem</h3>
+                            <span class="stand-cry">Kore ga... Requiem da.</span>
+                        </div>
+                    </div>
+                    <div class="stand-abilities evolved">
+                        <h4>Способности Реквиема</h4>
+                        <ul>
+                            <li>Возврат любых действий к нулю (включая смерть)</li>
+                            <li>Создание бесконечных циклов смерти</li>
+                            <li>Отмена причинно-следственных связей</li>
+                            <li>Сохранение сознания жертвы во всех реальностях</li>
+                            <li>Абсолютная неуязвимость к любым атакам</li>
+                            <li>Действие способностей даже при смерти владельца</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crazy Diamond -->
+            <div class="stand-evolution-card">
+                <div class="stand-base">
+                    <div class="stand-image-container">
+                        <img src="images/crazy diamond.jpg" alt="Crazy Diamond" class="stand-image">
+                        <div class="stand-name">
+                            <h3>Crazy Diamond</h3>
+                            <span class="stand-cry">DORARARARA!</span>
+                        </div>
+                    </div>
+                    <div class="stand-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Сила</span>
+                            <span class="stat-value">A</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Скорость</span>
+                            <span class="stat-value">A</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Точность</span>
+                            <span class="stat-value">B</span>
+                        </div>
+                    </div>
+                    <div class="stand-abilities">
+                        <h4>Уникальные способности</h4>
+                        <ul>
+                            <li>Мгновенное восстановление поврежденных объектов</li>
+                            <li>Изменение формы восстанавливаемых предметов</li>
+                            <li>Слияние разных объектов при восстановлении</li>
+                            <li>Отслеживание восстановленных объектов</li>
+                            <li>Невозможность восстановить самого владельца</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция о создателе -->
+    <section id="araki" class="araki-section">
+        <h2 class="menacing">Хирохико Араки</h2>
+        <div class="araki-content">
+            <div class="araki-info">
+                <img src="images/araki.jpg" alt="Хирохико Араки" class="araki-image">
+                <div class="araki-text">
+                    <h3>Создатель JoJo's Bizarre Adventure</h3>
+                    <p>Хирохико Араки - японский мангака, создатель культовой серии JoJo's Bizarre Adventure. Родился 7 июня 1960 года в Сендае, Япония.</p>
+                    <p>Начал рисовать мангу в раннем возрасте, а его первая работа была опубликована, когда ему было всего 20 лет. JoJo's Bizarre Adventure начала публиковаться в 1987 году и продолжается по сей день.</p>
+                    <p>Известен своим уникальным художественным стилем, который эволюционировал на протяжении всей серии, и способностью создавать сложные, захватывающие сюжеты.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция о злодеях -->
+    <section id="villains" class="villains-section">
+        <h2 class="menacing">Главные антагонисты</h2>
+        <div class="villain-cards">
+            <div class="villain-card">
+                <img src="images/dio brando.jpg" alt="Дио Брандо" class="villain-image">
+                <h3>Дио Брандо</h3>
+                <p>Часть 1 и 3: Главный антагонист, чье влияние распространяется на всю серию.</p>
+                <div class="villain-quote">
+                    <span class="quote-text">WRYYYYY!</span>
+                </div>
+            </div>
+            <div class="villain-card">
+                <img src="images/kars.jpg" alt="Карс" class="villain-image">
+                <h3>Карс</h3>
+                <p>Часть 2: Лидер древних людей из колонны, стремящийся стать совершенным существом.</p>
+            </div>
+            <div class="villain-card">
+                <img src="images/kira yoshikage.jpg" alt="Йошикаге Кира" class="villain-image">
+                <h3>Йошикаге Кира</h3>
+                <p>Часть 4: Серийный убийца из Морио, желающий жить спокойной жизнью.</p>
+            </div>
+            <div class="villain-card">
+                <img src="images/diavolo.jpg" alt="Дьяволо" class="villain-image">
+                <h3>Дьяволо</h3>
+                <p>Часть 5: Загадочный босс Passione со раздвоением личности.</p>
+            </div>
+            <div class="villain-card">
+                <img src="images/pucci.png" alt="Энрико Пуччи" class="villain-image">
+                <h3>Энрико Пуччи</h3>
+                <p>Часть 6: Священник, преданный идеям ДИО.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция культовых моментов -->
+    <section id="moments" class="moments-section">
+        <h2 class="menacing">Легендарные моменты</h2>
+        <div class="moments-gallery">
+            <div class="moment-card">
+                <img src="images/jonathan-dio.jpg" alt="Джонатан и Дио" class="moment-image">
+                <h3>Первая встреча Джонатана и Дио</h3>
+                <p>Момент, положивший начало вековому противостоянию.</p>
+            </div>
+            <div class="moment-card">
+                <img src="images/joseph joestar.jpg" alt="Джозеф предсказывает" class="moment-image">
+                <h3>Предсказания Джозефа</h3>
+                <p>Коронная фраза "Следующей что ты скажешь..."</p>
+            </div>
+            <div class="moment-card">
+                <img src="images/jotaro vs dio.jpg" alt="Джотаро против ДИО" class="moment-image">
+                <h3>Джотаро против ДИО</h3>
+                <p>Легендарная битва в Каире.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция фандома и мемов -->
+    <section id="fandom" class="fandom-section">
+        <h2 class="menacing">Фандом и мемы</h2>
+        <div class="fandom-content">
+            <div class="memes-gallery">
+                <div class="meme-card">
+                    <h3>То, что ты собирался сказать...</h3>
+                    <p>Знаменитая способность Джозефа предугадывать слова оппонента стала классическим мемом.</p>
+                </div>
+                <div class="meme-card">
+                    <h3>Позы ДжоДжо</h3>
+                    <p>Характерные позы персонажей стали визитной карточкой серии и источником множества пародий.</p>
+                </div>
+                <div class="meme-card">
+                    <h3>ゴゴゴゴ (Menacing)</h3>
+                    <p>Эффект "угрожающего присутствия" стал неотъемлемой частью интернет-культуры.</p>
+                </div>
+            </div>
+            <div class="famous-quotes">
+                <h3 class="menacing">Знаменитые фразы</h3>
+                <div class="quotes-container">
+                    <div class="quote-card">
+                        <p class="quote-text">Yare Yare Daze...</p>
+                        <span class="quote-author">- Джотаро Куджо</span>
+                    </div>
+                    <div class="quote-card">
+                        <p class="quote-text">OH MY GOD!</p>
+                        <span class="quote-author">- Джозеф Джостар</span>
+                    </div>
+                    <div class="quote-card">
+                        <p class="quote-text">DORA RA RA RA!</p>
+                        <span class="quote-author">- Джоске Хигашиката</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция сил и способностей -->
+    <section id="powers" class="powers-section">
+        <h2 class="menacing">Силы и способности</h2>
+        <div class="powers-content">
+            <div class="power-system">
+                <img src="images/hamon.jpg" alt="Хамон" class="power-image">
+                <h3>Хамон (波紋, Ripple)</h3>
+                <p>Древняя техника боевого дыхания, использующая энергию солнца. Особенно эффективна против вампиров и существ маски.</p>
+                <ul class="power-details">
+                    <li>Используется в частях 1-2</li>
+                    <li>Требует особой техники дыхания</li>
+                    <li>Передает солнечную энергию через тело</li>
+                    <li>Известные мастера: Уильям Цеппели, Джонатан Джостар, Джозеф Джостар</li>
+                </ul>
+            </div>
+
+            <div class="power-system">
+                <img src="images/vampire.jpg" alt="Вампиризм" class="power-image">
+                <h3>Вампиризм и Маска</h3>
+                <p>Сверхъестественные способности, получаемые через древнюю маску ацтеков.</p>
+                <ul class="power-details">
+                    <li>Сверхчеловеческая сила и скорость</li>
+                    <li>Регенерация</li>
+                    <li>Способность замораживать объекты прикосновением</li>
+                    <li>Известные пользователи: Дио Брандо, Карс (до становления совершенным существом)</li>
+                </ul>
+            </div>
+
+            <div class="power-system">
+                <img src="images/pillar-men.jpg" alt="Люди из колонн" class="power-image">
+                <h3>Люди из колонн</h3>
+                <p>Древняя раса сверхлюдей, создавшая маску.</p>
+                <ul class="power-details">
+                    <li>Полный контроль над телом</li>
+                    <li>Способность поглощать живые существа</li>
+                    <li>Иммунитет к большинству атак</li>
+                    <li>Известные представители: Карс, Эйсидиси, Вамм</li>
+                </ul>
+            </div>
+
+            <div class="power-system">
+                <img src="images/stands.jpg" alt="Станды" class="power-image">
+                <h3>Станды (スタンド)</h3>
+                <p>Физическое проявление духовной энергии, уникальное для каждого пользователя.</p>
+                <ul class="power-details">
+                    <li>Появляются с части 3</li>
+                    <li>Видимы только другим пользователям стендов</li>
+                    <li>Имеют уникальные способности</li>
+                    <li>Связаны с духовной силой владельца</li>
+                </ul>
+            </div>
+
+            <div class="power-system">
+                <img src="images/stand-arrow.png" alt="Стрела" class="power-image">
+                <h3>Стрела Станда</h3>
+                <p>Древний артефакт, способный пробуждать станды у людей с достаточной духовной силой.</p>
+                <ul class="power-details">
+                    <li>Создана из метеорита</li>
+                    <li>Может убить недостойного</li>
+                    <li>Существует несколько стрел</li>
+                    <li>Ключевой элемент в частях 4-6</li>
+                </ul>
+            </div>
+
+            <div class="power-system">
+                <img src="images/requiem.jpg" alt="Реквием" class="power-image">
+                <h3>Реквием</h3>
+                <p>Высшая форма станда, достигаемая при повторном пронзании стрелой.</p>
+                <ul class="power-details">
+                    <li>Чрезвычайно редкая и мощная форма</li>
+                    <li>Изменяет саму реальность</li>
+                    <li>Известные примеры: Gold Experience Requiem, Chariot Requiem</li>
+                    <li>Появляется в конце части 5</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция игры -->
+    <section id="music" class="music-section">
+        <h2 class="menacing">JoJo's Bizarre Adventure: All Star Battle R</h2>
+        <div class="music-content">
+            <div class="game-intro">
+                <div class="game-header">
+                    <img src="images/all-star-battle-r.jpg" alt="All Star Battle R" class="game-banner">
+                    <div class="game-info">
+                        <p class="game-description">Сражайтесь за любимых персонажей из всех частей JoJo в этом потрясающем файтинге!</p>
+                        <div class="game-details">
+                            <p>Разработчик: CyberConnect2</p>
+                            <p>Издатель: Bandai Namco</p>
+                            <p>Дата выхода: 2 сентября 2022</p>
+                            <p>Платформы: PS4, PS5, Xbox Series X|S, Xbox One, Nintendo Switch, PC</p>
+                            <button class="game-button pulse-effect">Купить игру</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-features">
+                <h3>Особенности игры</h3>
+                <div class="features-grid">
+                    <div class="feature-card" onclick="this.classList.toggle('card-expanded')">
+                        <h4>50+ Играбельных персонажей</h4>
+                        <p>От Джонатана Джостара до Джолин Куджо - все любимые герои и злодеи в одной игре!</p>
+                        <span class="click-hint">Нажмите для подробностей</span>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Уникальные боевые стили</h4>
+                        <p>Хамон, Стенды, Режим вампира и другие техники из вселенной JoJo.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Обновленная боевая система</h4>
+                        <p>Новые механики, комбо и приемы для более динамичных сражений.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Различные режимы игры</h4>
+                        <p>Сюжетный режим, онлайн-бои, практика и многое другое!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-characters">
+                <h3>Популярные бойцы</h3>
+                <div class="characters-grid">
+                    <div class="fighter-card">
+                        <img src="images/jotaro-game.jpg" alt="Джотаро" class="fighter-image">
+                        <h4>Джотаро Куджо</h4>
+                        <p>Star Platinum</p>
+                    </div>
+                    <div class="fighter-card">
+                        <img src="images/dio-game.jpg" alt="ДИО" class="fighter-image">
+                        <h4>ДИО</h4>
+                        <p>The World</p>
+                    </div>
+                    <div class="fighter-card">
+                        <img src="images/giorno-game.jpg" alt="Джорно" class="fighter-image">
+                        <h4>Джорно Джованна</h4>
+                        <p>Gold Experience</p>
+                    </div>
+                    <div class="fighter-card">
+                        <img src="images/jolyne-game.jpg" alt="Джолин" class="fighter-image">
+                        <h4>Джолин Куджо</h4>
+                        <p>Stone Free</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-modes">
+                <h3>Режимы игры</h3>
+                <div class="modes-grid">
+                    <div class="mode-card">
+                        <h4>All Star Battle Mode</h4>
+                        <p>Сразитесь в исторических битвах из манги!</p>
+                    </div>
+                    <div class="mode-card">
+                        <h4>Arcade Mode</h4>
+                        <p>Пройдите серию боев с увеличивающейся сложностью.</p>
+                    </div>
+                    <div class="mode-card">
+                        <h4>Online Mode</h4>
+                        <p>Сражайтесь с игроками со всего мира!</p>
+                    </div>
+                    <div class="mode-card">
+                        <h4>Practice Mode</h4>
+                        <p>Отточите свои навыки и изучите новые комбо.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Character Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <h2 class="menacing">Линия времени ДжоДжо</h2>
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+            <div class="timeline-events">
+                <div class="timeline-event" data-year="1868">
+                    <div class="event-content">
+                        <h3>Рождение Джонатана Джостара</h3>
+                        <p>Начало истории семьи Джостаров</p>
+                    </div>
+                </div>
+                <div class="timeline-event" data-year="1880">
+                    <div class="event-content">
+                        <h3>Дио входит в семью Джостаров</h3>
+                        <p>Начало противостояния</p>
+                    </div>
+                </div>
+                <div class="timeline-event" data-year="1889">
+                    <div class="event-content">
+                        <h3>Финальная битва с Дио</h3>
+                        <p>Конец Phantom Blood</p>
+                    </div>
+                </div>
+                <div class="timeline-event" data-year="1920">
+                    <div class="event-content">
+                        <h3>Рождение Джозефа Джостара</h3>
+                        <p>Начало Battle Tendency</p>
+                    </div>
+                </div>
+                <div class="timeline-event" data-year="1987">
+                    <div class="event-content">
+                        <h3>Начало Stardust Crusaders</h3>
+                        <p>Джотаро отправляется спасать свою мать</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="quiz-section">
+        <h2 class="menacing">Тест на знание JoJo</h2>
+        <div class="quiz-container">
+            <div class="quiz-start" id="quiz-start">
+                <h3>Проверь свои знания о мире JoJo!</h3>
+                <p>10 вопросов о персонажах, стендах и событиях</p>
+                <button class="quiz-button pulse-effect" id="start-quiz">Начать тест</button>
+            </div>
+            
+            <div class="quiz-content" id="quiz-content" style="display: none;">
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <span class="question-counter">Вопрос <span id="current-question">1</span> из <span id="total-questions">10</span></span>
+                </div>
+                
+                <div class="question-container">
+                    <h3 id="question-text">Вопрос загружается...</h3>
+                    <div class="answers-container" id="answers-container">
+                        <!-- Answers will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-result" id="quiz-result" style="display: none;">
+                <h3>Результат</h3>
+                <div class="result-score">
+                    <span id="score">0</span>/<span id="max-score">10</span>
+                </div>
+                <p id="result-message">Загрузка результата...</p>
+                <div class="result-image-container">
+                    <img id="result-image" src="" alt="Result Image" class="result-image">
+                </div>
+                <button class="quiz-button pulse-effect" id="retry-quiz">Пройти заново</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 JoJo's Bizarre Adventure Fan Site</p>
+            <div class="footer-links">
+                <a href="#home">Наверх</a>
+                <a href="#characters">Персонажи</a>
+                <a href="#plot">Сюжет</a>
+                <a href="#stands">Станды</a>
+                <a href="#villains">Злодеи</a>
+                <a href="#moments">Моменты</a>
+                <a href="#fandom">Фандом</a>
+                <a href="#araki">Араки</a>
+                <a href="#powers">Силы</a>
+                <a href="#game">Игра</a>
+                <a href="#timeline">Хронология</a>
+                <a href="#calculator">Калькулятор</a>
+                <a href="#quiz">Тест</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="java.js"></script>
+</body>
+</html>
